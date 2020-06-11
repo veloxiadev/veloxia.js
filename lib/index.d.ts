@@ -1,9 +1,3 @@
-/**
- *
- * @param num Input number
- * @param decimals
- * @param decimalPoint
- * @param thousandsSeparator
- */
-export declare function numberFormat(num: number, decimals?: number, decimalPoint?: string, thousandsSeparator?: string): string;
-export declare function booleanToString(input: boolean | number): "Ja" | "Nej";
+export * from "./string/boolean";
+export * from "./string/number";
+export * as sv_SE from "./lang/sv-se";
