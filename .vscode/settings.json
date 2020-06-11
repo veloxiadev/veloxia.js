@@ -1,0 +1,14 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "prettier.useTabs": false,
+  "editor.detectIndentation": true,
+  "editor.insertSpaces": true,
+  "prettier.tabWidth": 1,
+  "editor.tabSize": 2
+}
