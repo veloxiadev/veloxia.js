@@ -18,7 +18,7 @@ npm install @veloxia/veloxia
 ```javascript
 import * as v from "@veloxia/veloxia";
 const val = v.numberFormat(8999.9112, 2, ",", " ");
-console.log(val); // prints 8 999,91
+console.log(val); // 8 999,91
 ```
 
 [ts-badge]: https://img.shields.io/badge/TypeScript-3.8-blue.svg
