@@ -1,7 +1,7 @@
 {
-  "name": "veloxia.js",
+  "name": "@veloxia/veloxia",
   "description": "Javascript helpers.",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Viktor Svensson <viktor@veloxia.se> (https://www.veloxia.se)",
   "license": "MIT",
   "main": "lib/index.js",
@@ -40,5 +40,17 @@
   },
   "dependencies": {
     "tslib": "~1.10.0"
-  }
+  },
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veloxiadev/veloxia.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/veloxiadev/veloxia.js/issues"
+  },
+  "homepage": "https://github.com/veloxiadev/veloxia.js#readme"
 }

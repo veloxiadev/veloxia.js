@@ -3,61 +3,22 @@
 [![Build Status - Travis][travis-badge]][travis-ci]
 [![Node.js CI][ga-badge]][ga-ci]
 
-# Typescript Boilerplate
+# @veloxia/veloxia
 
-## Install
+Some javascript helper functions.
 
-### Clone the repository
-
-```bash
-git clone git@github.com:veloxiadev/typescript-boilerplate.git ts-project
-```
-
-### `cd` into the new project directory
+## Installation
 
 ```bash
-cd ts-project
-```
-
-### Install the dependencies
-
-```bash
-npm install
+npm install @veloxia/veloxia
 ```
 
 ## Usage
 
-The `tsc` command is required to compile Typescript files. Install it globally:
-
-```bash
-npm install -g typescript
-```
-
-The source files are located in `/src`. To compile the files and generate javascript, run `npm run build`. By default, the `npm run build` command will generate javascript files (in the `/dist` directory) together with documentation (in the `/docs` directory).
-
-## Commands
-
-```bash
-# Compile all files
-npm run build
-
-# Build and recompile when files are changed
-npm run watch
-
-# Build documentation only
-npm run build:docs
-
-# Build source files only
-npm run build:main
-
-# Run tests
-npm test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Lint
-npm run lint
+```javascript
+import * as v from "@veloxia/veloxia";
+const val = v.numberFormat(8999.9112, 2, ",", " ");
+console.log(val); // prints 8 999,91
 ```
 
 [ts-badge]: https://img.shields.io/badge/TypeScript-3.8-blue.svg

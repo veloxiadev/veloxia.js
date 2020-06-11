@@ -3,11 +3,10 @@ export function numberFormat(
   decimals = 0,
   decimalPoint = ",",
   thousandsSeparator = " "
-) {
+): string {
   const afterDecimal = Math.round(
     Math.pow(10, decimals) * (num - Math.floor(num))
   );
-
   const beforeDecimal = `${Math.floor(num)}`.split("");
   const separated = [];
   let buffer = "";
