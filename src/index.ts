@@ -1,4 +1,11 @@
-export function numberFormat(
+/**
+ *
+ * @param num Input number
+ * @param decimals
+ * @param decimalPoint
+ * @param thousandsSeparator
+ */
+export function numberFormat (
   num: number,
   decimals = 0,
   decimalPoint = ",",
@@ -26,4 +33,7 @@ export function numberFormat(
     decimalString = `${decimalPoint}${afterDecimal}`;
   }
   return separated.join(thousandsSeparator) + decimalString;
+}
+export function booleanToString (input: boolean | number) {
+  return input ? "Ja" : "Nej";
 }
