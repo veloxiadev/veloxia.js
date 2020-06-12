@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>typescript-boilerplate</title>
-	<meta name="description" content="Documentation for typescript-boilerplate">
+	<title>@veloxia/veloxia</title>
+	<meta name="description" content="Documentation for @veloxia/veloxia">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">typescript-boilerplate</a>
+					<a href="index.html" class="title">@veloxia/veloxia</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1>typescript-boilerplate</h1>
+			<h1>@veloxia/veloxia</h1>
 		</div>
 	</div>
 </header>
@@ -64,35 +64,41 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p>[![TypeScript version][ts-badge]][typescript-38]
+				<p>[<img src="https://img.shields.io/badge/TypeScript-3.8-blue.svg" alt="TypeScript version">][typescript-38]
 					[![Node.js version][nodejs-badge]][nodejs]
-					[![APLv2][license-badge]][license]
 					[![Build Status - Travis][travis-badge]][travis-ci]
-				[![Build Status - GitHub Actions][gha-badge]][gha-ci]</p>
-				<a href="#typescript-boilerplate" id="typescript-boilerplate" style="color: inherit; text-decoration: none;">
-					<h1>Typescript Boilerplate</h1>
+				[![Node.js CI][ga-badge]][ga-ci]</p>
+				<a href="#veloxiaveloxia" id="veloxiaveloxia" style="color: inherit; text-decoration: none;">
+					<h1>@veloxia/veloxia</h1>
 				</a>
-				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
-					<h2>Install</h2>
+				<p>Some javascript helper functions.</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
 				</a>
-				<a href="#clone-the-repository" id="clone-the-repository" style="color: inherit; text-decoration: none;">
-					<h3>Clone the repository</h3>
+				<pre><code class="language-bash">npm install @veloxia/veloxia</code></pre>
+				<a href="#example-usage" id="example-usage" style="color: inherit; text-decoration: none;">
+					<h2>Example usage</h2>
 				</a>
-				<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> git@github.com:veloxiadev/typescript-boilerplate.git ts-project</code></pre>
-				<a href="#cd-into-the-new-project-directory" id="cd-into-the-new-project-directory" style="color: inherit; text-decoration: none;">
-					<h3><code>cd</code> into the new project directory</h3>
-				</a>
-				<pre><code class="language-bash"><span class="hljs-built_in">cd</span> ts-project</code></pre>
-				<a href="#install-the-dependencies" id="install-the-dependencies" style="color: inherit; text-decoration: none;">
-					<h3>Install the dependencies</h3>
-				</a>
-				<pre><code class="language-bash">npm install</code></pre>
-				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h2>Usage</h2>
-				</a>
-				<p>The <code>tsc</code> command is required to compile Typescript files. Install it globally:</p>
-				<pre><code class="language-bash">npm install -g typescript</code></pre>
-				<p>The source files are located in <code>/src</code>. To compile the files and generate javascript, run <code>yarn build</code>. By default, the <code>yarn build</code> command will generate javascript files together with documentation (in the <code>/docs</code> directory).</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">// ES6 import</span>
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> v <span class="hljs-keyword">from</span> <span class="hljs-string">"@veloxia/veloxia"</span>;
+<span class="hljs-comment">// Node require</span>
+<span class="hljs-keyword">const</span> v = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@veloxia/veloxia"</span>);</code></pre>
+				<p><em>v.numberFormat()</em> adds thousands separators/decimal points to a number.</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> val = v.numberFormat(<span class="hljs-number">8999.9112</span>, <span class="hljs-number">2</span>, <span class="hljs-string">","</span>, <span class="hljs-string">" "</span>);
+<span class="hljs-built_in">console</span>.log(val); <span class="hljs-comment">// 8 999,91</span></code></pre>
+				<p><em>v.date()</em> applies a format template to a date object.</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> now = v.date(<span class="hljs-string">"Y-m-d"</span>);
+<span class="hljs-comment">// =&gt; 2020-06-11</span>
+<span class="hljs-keyword">const</span> yesterday = v.date(<span class="hljs-string">"Y-m-d"</span>, <span class="hljs-built_in">Date</span>.now() - <span class="hljs-number">1000</span> * <span class="hljs-number">3600</span> * <span class="hljs-number">24</span>);
+<span class="hljs-comment">// =&gt; 2020-06-10</span></code></pre>
+				<p>[nodejs-badge]: <a href="https://img.shields.io/badge/Node.js-&gt;=%2012.13-blue.svg">https://img.shields.io/badge/Node.js-&gt;=%2012.13-blue.svg</a>
+					[nodejs]: <a href="https://nodejs.org/dist/latest-v12.x/docs/api/">https://nodejs.org/dist/latest-v12.x/docs/api/</a>
+					[travis-badge]: <a href="https://travis-ci.org/veloxiadev/veloxia.js.svg?branch=master">https://travis-ci.org/veloxiadev/veloxia.js.svg?branch=master</a>
+					[travis-ci]: <a href="https://travis-ci.org/github/veloxiadev/veloxia.js">https://travis-ci.org/github/veloxiadev/veloxia.js</a>
+					[typescript]: <a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a>
+					[typescript-38]: <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html">https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html</a>
+					[ga-badge]: <a href="https://github.com/veloxiadev/veloxia.js/workflows/Node.js%20CI/badge.svg">https://github.com/veloxiadev/veloxia.js/workflows/Node.js%20CI/badge.svg</a>
+				[ga-ci]: <a href="https://github.com/veloxiadev/veloxia.js/actions">https://github.com/veloxiadev/veloxia.js/actions</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -102,7 +108,25 @@
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_formatting_boolean_.html">&quot;formatting/boolean&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_formatting_date_.html">&quot;formatting/date&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_formatting_number_.html">&quot;formatting/number&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_lang_sv_se_index_.html">&quot;lang/sv-<wbr>se/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_lang_sv_se_terms_.html">&quot;lang/sv-<wbr>se/terms&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_literal_time_parser_rules_.html">&quot;utils/literal_<wbr>time_<wbr>parser_<wbr>rules&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -118,10 +142,9 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 		</div>
 	</div>
