@@ -36,7 +36,7 @@ export async function awaitCondition(
     // The loop function will call itself with a timeout until the
     // condition is met or the timeout has been reached.
     const loop = (cond: (...args: any[]) => any, condArgs: any[]) => {
-      const res = cond.call(globalThis, ...condArgs);
+      const res = cond.call(this, ...condArgs);
       // res is true or truthy => resolve
       if (res) return resolve(res);
       // timeout has been reached => reject
