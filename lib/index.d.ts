@@ -1,3 +1,4 @@
-export * from "./string/boolean";
-export * from "./string/number";
+export * from "./formatting/boolean";
+export * from "./formatting/number";
+export * from "./formatting/date";
 export * as sv_SE from "./lang/sv-se";
