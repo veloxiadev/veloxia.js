@@ -2,6 +2,8 @@
 [![Node.js version][nodejs-badge]][nodejs]
 [![Build Status - Travis][travis-badge]][travis-ci]
 [![Node.js CI][ga-badge]][ga-ci]
+[![npm version](https://img.shields.io/npm/v/@veloxia/veloxia.svg)](https://www.npmjs.com/package/@veloxia/veloxia)
+
 
 # @veloxia/veloxia
 
