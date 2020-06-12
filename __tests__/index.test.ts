@@ -1,23 +1,67 @@
 import * as v from "../src/index";
 
 describe("@veloxia/veloxia methods", () => {
-  it("numberFormat()", () => {
+  it("v.numberFormat() converts numbers to pretty strings", () => {
     expect(v.numberFormat(259000)).toBe("259 000");
     expect(v.numberFormat(2259000.93)).toBe("2 259 000");
     expect(v.numberFormat(259000.97, 2, ",", " ")).toBe("259 000,97");
   });
-  it("booleanToString()", () => {
+  it("v.booleanToString() converts truthy and falsy values to yes/no", () => {
     expect(v.booleanToString(true, "Ja", "Nej")).toBe("Ja");
     expect(v.booleanToString(false, "Ja", "Nej")).toBe("Nej");
     expect(v.booleanToString(1)).toBe("Ja");
     expect(v.booleanToString(0)).toBe("Nej");
   });
 
-  it("sv_SE", () => {
+  it("v.sv_SE is defined", () => {
     expect(v.sv_SE.terms.Months.Full[1]).toBe("januari");
   });
 
-  it("date()", () => {
+  it("v.random() generates random numbers that average around min + 0.5 x (max-min)", () => {
+    let sum = 0;
+    for (let i = 0; i < 1000; i++) {
+      const rand = v.random(10, 30);
+      sum += rand;
+      expect(rand).toBeLessThanOrEqual(30);
+      expect(rand).toBeGreaterThanOrEqual(10);
+    }
+    // Should average around 20
+    expect(sum / 1000).toBeGreaterThanOrEqual(18);
+    expect(sum / 1000).toBeLessThanOrEqual(22);
+  });
+
+  it("v.randomInteger() generates random INTEGERS", () => {
+    let sum = 0;
+    for (let i = 0; i < 1000; i++) {
+      const rand = v.randomInteger(10, 30);
+      sum += rand;
+      expect(rand).toBeLessThanOrEqual(30);
+      expect(rand).toBeGreaterThanOrEqual(10);
+      expect(Math.round(rand)).toBe(rand);
+    }
+    // Should average around 20
+    expect(sum / 1000).toBeGreaterThanOrEqual(18);
+    expect(sum / 1000).toBeLessThanOrEqual(22);
+  });
+
+  it("v.randomString() generates a string of the requested length ", () => {
+    const str = v.randomString(10);
+    expect(str.length).toBe(10);
+    expect(str).toMatch(/^[\w\d]{10}$/);
+  });
+
+  it("v.LITERAL_TIME_PARSER_RULES are callable", () => {
+    for (const r in v.LITERAL_TIME_PARSER_RULES) {
+      expect(
+        v.LITERAL_TIME_PARSER_RULES[r].provide.call(this, {
+          num: 1,
+          unit: "day",
+        })
+      ).toBeDefined();
+    }
+  });
+
+  it("v.date() makes correct conversions", () => {
     expect(
       v.date(
         "Y-m-d",
@@ -86,5 +130,22 @@ describe("@veloxia/veloxia methods", () => {
       v.date("Y-m-d H:i:s", Date.now() + 1000)
     );
     expect(v.date()).toBeDefined();
+  });
+
+  it("v.sleep() makes the script sleep", async () => {
+    const begin = Date.now();
+    await v.sleep(2000);
+    const duration = Date.now() - begin;
+    expect(duration).toBeGreaterThan(2000);
+  });
+
+  it("v.awaitCondition() awaits a condition", async () => {
+    let aVariable;
+    setTimeout(() => {
+      aVariable = "Hello";
+    }, 2000);
+    expect(aVariable).toBeUndefined();
+    await v.awaitCondition(() => aVariable !== undefined);
+    expect(aVariable).toBe("Hello");
   });
 });

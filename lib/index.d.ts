@@ -1,4 +1,4 @@
-export * from "./formatting/boolean";
-export * from "./formatting/number";
-export * from "./formatting/date";
-export * as sv_SE from "./lang/sv-se";
+export * from "./formatting";
+export * from "./lang";
+export * from "./random";
+export * from "./utils";

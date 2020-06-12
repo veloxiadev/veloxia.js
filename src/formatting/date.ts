@@ -1,5 +1,7 @@
-import { literalTimeParserRules } from "../utils/literal_time_parser_rules";
-
+/**
+ * Convert a given unit of time to milliseconds (1000 ms = 1 s)
+ * @param timeUnit i.e. "year", "hour", "month"...
+ */
 export function toMs(
   timeUnit: "year" | "month" | "week" | "day" | "hour" | "minute" | "second"
 ) {
@@ -29,6 +31,70 @@ export function toMs(
   }
   return ms;
 }
+export const LITERAL_TIME_PARSER_RULES = [
+  {
+    match: /^now$/i,
+    provide: () => Date.now(),
+  },
+  {
+    match: /^today$/i,
+    provide: () => Date.now(),
+  },
+  {
+    match: /^tomorrow$/i,
+    provide: () => Date.now() + 1000 * 3600 * 24,
+  },
+  {
+    match: /^yesterday$/i,
+    provide: () => Date.now() - 1000 * 3600 * 24,
+  },
+  {
+    match: /^last week$/i,
+    provide: () => Date.now() - 1000 * 3600 * 24 * 7,
+  },
+  {
+    match: /^next week$/i,
+    provide: () => Date.now() + 1000 * 3600 * 24 * 7,
+  },
+  {
+    match: /^last month$/i,
+    provide: () => Date.now() - 1000 * 3600 * 24 * 30,
+  },
+  {
+    match: /^next month$/i,
+    provide: () => Date.now() + 1000 * 3600 * 24 * 30,
+  },
+  {
+    match: /^last year$/i,
+    provide: () => Date.now() - 1000 * 3600 * 24 * 365,
+  },
+  {
+    match: /^next year$/i,
+    provide: () => Date.now() + 1000 * 3600 * 24 * 365,
+  },
+  {
+    match: [
+      /^(?<num>\d+)\s*?(?<unit>year|month|week|day|hour|minute|second)s?\s*?ago$/i,
+      /^-\s*?(?<num>\d+)\s*?(?<unit>year|month|week|day|hour|minute|second)s?$/i,
+    ],
+    provide: (match: { num: any; unit: any }) => {
+      const milliSeconds = toMs(match.unit.toLowerCase());
+      const factor = parseInt(match.num);
+      const date = new Date(Date.now() - milliSeconds * factor);
+      return date;
+    },
+  },
+  {
+    match: /^(?:\+|in)\s*?(?<num>\d+)\s*?(?<unit>year|month|week|day|hour|minute|second)s?\s*$/i,
+    provide: (match: { num: any; unit: any }) => {
+      const milliSeconds = toMs(match.unit.toLowerCase());
+      const factor = parseInt(match.num);
+      const date = new Date(Date.now() + milliSeconds * factor);
+      return date;
+    },
+  },
+];
+
 /**
  * Transform a `Date` instance into a desired format.
  * @param format Date format, default: Y-m-d H:i:s
@@ -47,7 +113,7 @@ export function date(
     | "last year"
     | "last week" = Date.now()
 ) {
-  literalTimeParserRules.forEach(instr => {
+  LITERAL_TIME_PARSER_RULES.forEach(instr => {
     let exps = [];
     if (!Array.isArray(instr.match)) {
       exps[0] = instr.match;

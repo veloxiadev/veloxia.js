@@ -4,7 +4,6 @@
 [![Node.js CI][ga-badge]][ga-ci]
 [![npm version](https://img.shields.io/npm/v/@veloxia/veloxia.svg)](https://www.npmjs.com/package/@veloxia/veloxia)
 
-
 # @veloxia/veloxia
 
 Some javascript helper functions.
@@ -22,6 +21,27 @@ npm install @veloxia/veloxia
 import * as v from "@veloxia/veloxia";
 // Node require
 const v = require("@veloxia/veloxia");
+```
+
+_v.awaitCondition()_ lets you await anything.
+
+```javascript
+(async () => {
+  let aVariable;
+  // Set aVariable after 5 seconds
+  setTimeout(() => {
+    aVariable = "Hello";
+  }, 5000);
+  // Since the timeout above has to pass before aVariable
+  // is defined, this console.log will not print any value.
+  console.log(aVariable);
+  // => _undefined_
+  await awaitCondition(() => typeof aVariable !== "undefined");
+  // After the await condition has been met, the script
+  // execution continues. aVariable is now available to us:
+  console.log(aVariable);
+  // => "Hello"
+})();
 ```
 
 _v.numberFormat()_ adds thousands separators/decimal points to a number.
