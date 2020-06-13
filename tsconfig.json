@@ -5,7 +5,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "composite": true,
-    "declarationDir": "@types",
     "declaration": true,
     "allowJs": true,
     "importHelpers": true,

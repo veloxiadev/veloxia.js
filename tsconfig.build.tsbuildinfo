@@ -496,7 +496,6 @@
       "moduleResolution": 2,
       "allowSyntheticDefaultImports": true,
       "composite": true,
-      "declarationDir": "./@types",
       "declaration": true,
       "allowJs": true,
       "importHelpers": true,
@@ -2456,6 +2455,7 @@
       "./src/utils/sleep.ts",
       "./src/utils/await.ts",
       "./src/utils/index.ts",
+      "./src/index.ts",
       "./node_modules/@babel/types/lib/index.d.ts",
       "./node_modules/@types/babel__generator/index.d.ts",
       "./node_modules/@types/babel__traverse/index.d.ts",
@@ -2530,8 +2530,7 @@
       "./node_modules/@types/prettier/index.d.ts",
       "./node_modules/@types/stack-utils/index.d.ts",
       "./node_modules/@types/yargs-parser/index.d.ts",
-      "./node_modules/@types/yargs/index.d.ts",
-      "./src/index.ts"
+      "./node_modules/@types/yargs/index.d.ts"
     ]
   },
   "version": "3.8.3"
