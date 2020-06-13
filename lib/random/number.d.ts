@@ -11,8 +11,3 @@ export declare function random(min: number, max: number, decimals?: number): num
  * @param max max ≥ R
  */
 export declare function randomInteger(min: number, max: number): number;
-/**
- * Generates a random string of characters (a-z, A-Z, 0-9).
- * @param length
- */
-export declare function randomString(length: number): string;

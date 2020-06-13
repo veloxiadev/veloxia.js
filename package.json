@@ -1,13 +1,10 @@
 {
   "name": "@veloxia/veloxia",
   "description": "Javascript helpers.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Viktor Svensson <viktor@veloxia.se> (https://www.veloxia.se)",
   "license": "MIT",
   "main": "lib/index.js",
-  "engines": {
-    "node": ">= 12.13"
-  },
   "scripts": {
     "clean": "npm run clean:lib && npm run clean:docs",
     "clean:lib": "[ ! -d lib ] || rimraf lib",

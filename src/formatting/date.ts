@@ -31,7 +31,7 @@ export function toMs(
   }
   return ms;
 }
-export const LITERAL_TIME_PARSER_RULES = [
+const LITERAL_TIME_PARSER_RULES = [
   {
     match: /^now$/i,
     provide: () => Date.now(),
@@ -97,11 +97,11 @@ export const LITERAL_TIME_PARSER_RULES = [
 
 /**
  * Transform a `Date` instance into a desired format.
- * @param format Date format, default: Y-m-d H:i:s
+ * @param format Date format, default: Y-m-d
  * @param date Date instance or Unix timestamp in milliseconds. Default is current date.
  */
 export function date(
-  format = "Y-m-d H:i:s",
+  format = "Y-m-d",
   date:
     | number
     | string
