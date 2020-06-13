@@ -17,9 +17,13 @@ export function numberFormat(
   // 2. x * 10^decimals, i.e. x * 10^2 (x * 100 = 91.61) if 2 decimals
   // 3. Round output => 92
   // 4. The number to display after decimal point = 92
-  const afterDecimal = Math.round(
+  let afterDecimal = `${Math.round(
     Math.pow(10, decimals) * (num - Math.floor(num))
-  );
+  )}`;
+  // 5. If decimal is < 10|100|1000 etc, prepend 0:s
+  while (afterDecimal.length < decimals) {
+    afterDecimal = `0${afterDecimal}`;
+  }
   // Before decimal is less complicated: just floor divide
   // to get 91.
   const beforeDecimal = `${Math.floor(num)}`.split("");
