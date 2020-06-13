@@ -5,7 +5,12 @@ describe("@veloxia/veloxia methods", () => {
     expect(v.numberFormat(259000)).toBe("259 000");
     expect(v.numberFormat(2259000.93)).toBe("2 259 000");
     expect(v.numberFormat(259000.97, 2, ",", " ")).toBe("259 000,97");
-    expect(v.numberFormat(250, 2, ",", " ")).toBe("250,00");
+  });
+  it("v.numberFormat() prepends 0:s when number of decimals exceed precision", () => {
+    expect(v.numberFormat(2500.23, 1, ",", " ")).toBe("2 500,2");
+    expect(v.numberFormat(2500.23, 0, ",", " ")).toBe("2 500");
+    expect(v.numberFormat(2500, 2, ",", " ")).toBe("2 500,00");
+    expect(v.numberFormat(2500.23, 3, ",", " ")).toBe("2 500,230");
   });
   it("v.booleanToString() converts truthy and falsy values to yes/no", () => {
     expect(v.booleanToString(true, "Ja", "Nej")).toBe("Ja");
