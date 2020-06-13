@@ -22,8 +22,11 @@
  * @param condition A function that should return a truthy value when the condition is met
  * @param config Config
  */
-export declare function awaitCondition(condition: (...args: any[]) => any, config?: {
+export declare function awaitCondition(
+  condition: (...args: any[]) => any,
+  config?: {
     args: any[];
     interval: number;
     timeout: number;
-}): Promise<unknown>;
+  }
+): Promise<unknown>;
