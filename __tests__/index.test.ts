@@ -5,6 +5,7 @@ describe("@veloxia/veloxia methods", () => {
     expect(v.numberFormat(259000)).toBe("259 000");
     expect(v.numberFormat(2259000.93)).toBe("2 259 000");
     expect(v.numberFormat(259000.97, 2, ",", " ")).toBe("259 000,97");
+    expect(v.numberFormat(250, 2, ",", " ")).toBe("250,00");
   });
   it("v.booleanToString() converts truthy and falsy values to yes/no", () => {
     expect(v.booleanToString(true, "Ja", "Nej")).toBe("Ja");
