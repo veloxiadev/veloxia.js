@@ -5,7 +5,7 @@ describe("/utils", () => {
     const begin = Date.now();
     await sleep(1000);
     const duration = Date.now() - begin;
-    expect(duration).toBeGreaterThan(1000);
+    expect(duration).toBeGreaterThanOrEqual(1000);
   });
 
   it("awaitCondition() awaits a condition", async () => {
