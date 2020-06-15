@@ -6,7 +6,7 @@
  * @param skipLast Ignore last chunk if it's smaller than `length` [default=false]
  * @returns chunk
  */
-export declare function chunkArray<T = any>(input: T[] | any[], length: number, skipLast?: boolean): T[][] | any[][];
+export declare function arrayChunk<T = any>(input: T[] | any[], length: number, skipLast?: boolean): T[][] | any[][];
 /**
  * Splits a string into smaller chunks.
  * @param input Input string
@@ -14,4 +14,4 @@ export declare function chunkArray<T = any>(input: T[] | any[], length: number, 
  * @param skipLast Ignore last chunk if it's smaller than `length` [default=false]
  * @returns string
  */
-export declare function chunkString(input: string, length: number, skipLast?: boolean): string[];
+export declare function stringChunk(input: string, length: number, skipLast?: boolean): string[];

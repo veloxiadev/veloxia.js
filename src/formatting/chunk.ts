@@ -6,7 +6,7 @@
  * @param skipLast Ignore last chunk if it's smaller than `length` [default=false]
  * @returns chunk
  */
-export function chunkArray<T = any>(
+export function arrayChunk<T = any>(
   input: T[] | any[],
   length: number,
   skipLast = false
@@ -32,7 +32,7 @@ export function chunkArray<T = any>(
  * @param skipLast Ignore last chunk if it's smaller than `length` [default=false]
  * @returns string
  */
-export function chunkString(
+export function stringChunk(
   input: string,
   length: number,
   skipLast = false
