@@ -1,6 +1,10 @@
-import { date } from "../src/index";
-import { numberFormat } from "../src/index";
-import { booleanToString } from "../src/index";
+import {
+  date,
+  numberFormat,
+  booleanToString,
+  chunkString,
+  chunkArray,
+} from "../src/index";
 describe("/formatting/boolean", () => {
   it("booleanToString() converts truthy and falsy values to yes/no", () => {
     expect(booleanToString(true, "Ja", "Nej")).toBe("Ja");
@@ -21,6 +25,32 @@ describe("/formatting/number", () => {
     expect(numberFormat(2500.23, 0, ",", " ")).toBe("2 500");
     expect(numberFormat(2500, 2, ",", " ")).toBe("2 500,00");
     expect(numberFormat(2500.23, 3, ",", " ")).toBe("2 500,230");
+  });
+});
+
+describe("/formatting/chunk", () => {
+  it("chunkString() splits a string into smaller chunks", () => {
+    expect(chunkString("Hello world", 4)).toStrictEqual([
+      "Hell",
+      "o wo",
+      "rld",
+    ]);
+  });
+  it("chunkString() skips last element if requested", () => {
+    expect(chunkString("Hello world", 4, true)).toStrictEqual(["Hell", "o wo"]);
+  });
+  it("chunkArray() splits an array into smaller chunks", () => {
+    expect(chunkArray(["a", "b", "c", "d", "e"], 2)).toStrictEqual([
+      ["a", "b"],
+      ["c", "d"],
+      ["e"],
+    ]);
+  });
+  it("chunkArray() skips last element if requested", () => {
+    expect(chunkArray(["a", "b", "c", "d", "e"], 2, true)).toStrictEqual([
+      ["a", "b"],
+      ["c", "d"],
+    ]);
   });
 });
 
@@ -99,6 +129,9 @@ describe("/formatting/date", () => {
     );
     expect(date("Y-m-d H:i:s", "now")).toBe(date("Y-m-d H:i:s", Date.now()));
     expect(date("Y-m-d H:i:s", "today")).toBe(date("Y-m-d H:i:s", Date.now()));
+    expect(date("Y-m-d", "tomorrow")).toBe(
+      date("Y-m-d", Date.now() + 1000 * 3600 * 24 * 1)
+    );
     expect(date("Y-m-d", "next week")).toBe(
       date("Y-m-d", Date.now() + 1000 * 3600 * 24 * 7)
     );

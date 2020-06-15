@@ -17,4 +17,18 @@ describe("/utils", () => {
     await awaitCondition(() => aVariable !== undefined);
     expect(aVariable).toBe("Hello");
   });
+  it("awaitCondition() respects timeout", async () => {
+    let aVariable;
+    setTimeout(() => {
+      aVariable = "Hello";
+    }, 1500);
+    expect(aVariable).toBeUndefined();
+    try {
+      await awaitCondition(() => aVariable !== undefined, { timeout: 500 });
+    } catch (err) {
+      //
+    }
+    await sleep(550);
+    expect(aVariable).toBeUndefined();
+  });
 });

@@ -1,3 +1,8 @@
+const AWAIT_CONDITION_DEFAULT_CONFIG = {
+  args: [],
+  interval: 1000 * 0.1,
+  timeout: 1000 * 45,
+};
 /**
  * This function provides extended async/await functionality, by allowing
  * you to await _anything_.
@@ -24,12 +29,16 @@
  */
 export async function awaitCondition(
   condition: (...args: any[]) => any,
-  config: {
-    args: any[];
-    interval: number;
-    timeout: number;
-  } = { args: [], interval: 1000 * 0.1, timeout: 1000 * 45 }
+  config?: {
+    args?: any[];
+    interval?: number;
+    timeout?: number;
+  }
 ) {
+  config = config || {};
+  Object.keys(AWAIT_CONDITION_DEFAULT_CONFIG).forEach(k => {
+    config[k] = config[k] || AWAIT_CONDITION_DEFAULT_CONFIG[k];
+  });
   const promise = new Promise((resolve, reject) => {
     // Log start time
     const startTime = Date.now();
