@@ -23,7 +23,7 @@
  * @param config Config
  */
 export declare function awaitCondition(condition: (...args: any[]) => any, config?: {
-    args: any[];
-    interval: number;
-    timeout: number;
+    args?: any[];
+    interval?: number;
+    timeout?: number;
 }): Promise<unknown>;
