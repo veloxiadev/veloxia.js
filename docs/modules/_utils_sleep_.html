@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;lang/sv-se/index&quot; | @veloxia/veloxia</title>
+	<title>&quot;utils/sleep&quot; | @veloxia/veloxia</title>
 	<meta name="description" content="Documentation for @veloxia/veloxia">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_lang_sv_se_index_.html">&quot;lang/sv-se/index&quot;</a>
+					<a href="_utils_sleep_.html">&quot;utils/sleep&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;lang/sv-se/index&quot;</h1>
+			<h1>Module &quot;utils/sleep&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,20 +71,61 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>References</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-reference tsd-parent-kind-module"><a href="_lang_sv_se_index_.html#terms" class="tsd-kind-icon">terms</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_utils_sleep_.html#sleep" class="tsd-kind-icon">sleep</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>References</h2>
-				<section class="tsd-panel tsd-member tsd-kind-reference tsd-parent-kind-module">
-					<a name="terms" class="tsd-anchor"></a>
-					<h3>terms</h3>
-					Re-exports <a href="_lang_sv_se_terms_.html#terms">terms</a>
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="sleep" class="tsd-anchor"></a>
+					<h3>sleep</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sleep<span class="tsd-signature-symbol">(</span>ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/ad3038f/src/utils/sleep.ts#L22">utils/sleep.ts:22</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sleep for a while. Provides the same functionality as
+									with PHP, Bash etc.</p>
+								</div>
+								<p>The function is asynchronous, which means other scripts
+									are able to run while the sleeping script is waiting.
+									As soon as the sleep is over, the script execution will
+								continue.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">task</span> (<span class="hljs-params"></span>) </span>{
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Starting task...`</span>)
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Going to sleep for 2 seconds...`</span>)
+ <span class="hljs-keyword">await</span> v.sleep(<span class="hljs-number">1000</span> * <span class="hljs-number">2</span>)
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`I'm back!`</span>)
+}</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ms: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Number of milliseconds to sleep (1000 ms = 1 s)</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -118,7 +159,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_lang_index_.html">&quot;lang/index&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_lang_sv_se_index_.html">&quot;lang/sv-<wbr>se/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -139,15 +180,15 @@
 					<li class=" tsd-kind-module">
 						<a href="_utils_index_.html">&quot;utils/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_utils_sleep_.html">&quot;utils/sleep&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-reference tsd-parent-kind-module">
-						<a href="_lang_sv_se_index_.html#terms" class="tsd-kind-icon">terms</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_utils_sleep_.html#sleep" class="tsd-kind-icon">sleep</a>
 					</li>
 				</ul>
 			</nav>

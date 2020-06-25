@@ -65,7 +65,6 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<p>[<img src="https://img.shields.io/badge/TypeScript-3.8-blue.svg" alt="TypeScript version">][typescript-38]
-					[![Node.js version][nodejs-badge]][nodejs]
 					[![Build Status - Travis][travis-badge]][travis-ci]
 				[![Node.js CI][ga-badge]][ga-ci]</p>
 				<a href="#veloxiaveloxia" id="veloxiaveloxia" style="color: inherit; text-decoration: none;">
@@ -83,6 +82,20 @@
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> v <span class="hljs-keyword">from</span> <span class="hljs-string">"@veloxia/veloxia"</span>;
 <span class="hljs-comment">// Node require</span>
 <span class="hljs-keyword">const</span> v = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@veloxia/veloxia"</span>);</code></pre>
+				<p><em>v.awaitCondition()</em> lets you await anything.</p>
+				<pre><code class="language-javascript">(<span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">let</span> aVariable;
+  <span class="hljs-keyword">set</span><span class="hljs-title">Timeout</span>(<span class="hljs-params">(</span>) =&gt; {
+    aVariable = <span class="hljs-string">"Hello"</span>;
+  }, <span class="hljs-number">5000</span>);
+  <span class="hljs-built_in">console</span>.log(aVariable);
+  <span class="hljs-comment">// =&gt; undefined</span>
+  <span class="hljs-keyword">await</span> awaitCondition(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> aVariable !== <span class="hljs-string">"undefined"</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  }
+  <span class="hljs-built_in">console</span>.log(aVariable);
+  <span class="hljs-comment">// =&gt; "Hello"</span>
+})();</code></pre>
 				<p><em>v.numberFormat()</em> adds thousands separators/decimal points to a number.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> val = v.numberFormat(<span class="hljs-number">8999.9112</span>, <span class="hljs-number">2</span>, <span class="hljs-string">","</span>, <span class="hljs-string">" "</span>);
 <span class="hljs-built_in">console</span>.log(val); <span class="hljs-comment">// 8 999,91</span></code></pre>
@@ -92,7 +105,6 @@
 <span class="hljs-keyword">const</span> yesterday = v.date(<span class="hljs-string">"Y-m-d"</span>, <span class="hljs-built_in">Date</span>.now() - <span class="hljs-number">1000</span> * <span class="hljs-number">3600</span> * <span class="hljs-number">24</span>);
 <span class="hljs-comment">// =&gt; 2020-06-10</span></code></pre>
 				<p>[nodejs-badge]: <a href="https://img.shields.io/badge/Node.js-&gt;=%2012.13-blue.svg">https://img.shields.io/badge/Node.js-&gt;=%2012.13-blue.svg</a>
-					[nodejs]: <a href="https://nodejs.org/dist/latest-v12.x/docs/api/">https://nodejs.org/dist/latest-v12.x/docs/api/</a>
 					[travis-badge]: <a href="https://travis-ci.org/veloxiadev/veloxia.js.svg?branch=master">https://travis-ci.org/veloxiadev/veloxia.js.svg?branch=master</a>
 					[travis-ci]: <a href="https://travis-ci.org/github/veloxiadev/veloxia.js">https://travis-ci.org/github/veloxiadev/veloxia.js</a>
 					[typescript]: <a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a>
@@ -108,10 +120,19 @@
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_date_date_.html">&quot;date/date&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_date_index_.html">&quot;date/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_formatting_boolean_.html">&quot;formatting/boolean&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_formatting_date_.html">&quot;formatting/date&quot;</a>
+						<a href="modules/_formatting_chunk_.html">&quot;formatting/chunk&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_formatting_index_.html">&quot;formatting/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_formatting_number_.html">&quot;formatting/number&quot;</a>
@@ -120,13 +141,31 @@
 						<a href="modules/_index_.html">&quot;index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_lang_index_.html">&quot;lang/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_lang_sv_se_index_.html">&quot;lang/sv-<wbr>se/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_lang_sv_se_terms_.html">&quot;lang/sv-<wbr>se/terms&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_utils_literal_time_parser_rules_.html">&quot;utils/literal_<wbr>time_<wbr>parser_<wbr>rules&quot;</a>
+						<a href="modules/_random_index_.html">&quot;random/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_random_number_.html">&quot;random/number&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_random_string_.html">&quot;random/string&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_await_.html">&quot;utils/await&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_index_.html">&quot;utils/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_sleep_.html">&quot;utils/sleep&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -145,6 +184,7 @@
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 			</ul>
 		</div>
 	</div>
