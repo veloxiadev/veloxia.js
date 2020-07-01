@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;formatting/boolean&quot; | @veloxia/veloxia</title>
+	<title>&quot;formatting/chunk&quot; | @veloxia/veloxia</title>
 	<meta name="description" content="Documentation for @veloxia/veloxia">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_formatting_boolean_.html">&quot;formatting/boolean&quot;</a>
+					<a href="_formatting_chunk_.html">&quot;formatting/chunk&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;formatting/boolean&quot;</h1>
+			<h1>Module &quot;formatting/chunk&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,8 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_formatting_boolean_.html#booleantostring" class="tsd-kind-icon">boolean<wbr>ToString</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_formatting_chunk_.html#arraychunk" class="tsd-kind-icon">array<wbr>Chunk</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_formatting_chunk_.html#stringchunk" class="tsd-kind-icon">string<wbr>Chunk</a></li>
 							</ul>
 						</section>
 					</div>
@@ -81,46 +82,100 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="booleantostring" class="tsd-anchor"></a>
-					<h3>boolean<wbr>ToString</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">boolean<wbr>ToString<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, onTrue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, onFalse<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="arraychunk" class="tsd-anchor"></a>
+					<h3>array<wbr>Chunk</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">array<wbr>Chunk&lt;T&gt;<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>, length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, skipLast<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/3483949/src/formatting/boolean.ts#L7">formatting/boolean.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/3483949/src/formatting/chunk.ts#L9">formatting/chunk.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Converts a boolean value into <code>yes</code> or <code>no</code>.</p>
+									<p>Splits an array into smaller chunks.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+									<div class="tsd-comment tsd-typography">
+										<p>Array element type, e.g. &quot;string&quot; or &quot;number&quot;</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>input: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Input array</p>
+									</div>
+								</li>
+								<li>
+									<h5>length: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Max length of each chunk</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> skipLast: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Ignore last chunk if it&#39;s smaller than <code>length</code> [default=false]</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>chunk</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="stringchunk" class="tsd-anchor"></a>
+					<h3>string<wbr>Chunk</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">string<wbr>Chunk<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, skipLast<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/3483949/src/formatting/chunk.ts#L35">formatting/chunk.ts:35</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Splits a string into smaller chunks.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>input: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5>input: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Input boolean or truthy/falsy value.</p>
+										<p>Input string</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> onTrue: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;Ja&quot;</span></h5>
+									<h5>length: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>String to display if input is truthy.</p>
+										<p>Max length of each chunk</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> onFalse: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;Nej&quot;</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> skipLast: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>String to display if input is falsy.</p>
+										<p>Ignore last chunk if it&#39;s smaller than <code>length</code> [default=false]</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>string</p>
 						</li>
 					</ul>
 				</section>
@@ -141,10 +196,10 @@
 					<li class=" tsd-kind-module">
 						<a href="_file_index_.html">&quot;file/index&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_formatting_boolean_.html">&quot;formatting/boolean&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_formatting_chunk_.html">&quot;formatting/chunk&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -187,8 +242,11 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_formatting_chunk_.html#arraychunk" class="tsd-kind-icon">array<wbr>Chunk</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_formatting_boolean_.html#booleantostring" class="tsd-kind-icon">boolean<wbr>ToString</a>
+						<a href="_formatting_chunk_.html#stringchunk" class="tsd-kind-icon">string<wbr>Chunk</a>
 					</li>
 				</ul>
 			</nav>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;formatting/boolean&quot; | @veloxia/veloxia</title>
+	<title>&quot;utils/sleep&quot; | @veloxia/veloxia</title>
 	<meta name="description" content="Documentation for @veloxia/veloxia">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_formatting_boolean_.html">&quot;formatting/boolean&quot;</a>
+					<a href="_utils_sleep_.html">&quot;utils/sleep&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;formatting/boolean&quot;</h1>
+			<h1>Module &quot;utils/sleep&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_formatting_boolean_.html#booleantostring" class="tsd-kind-icon">boolean<wbr>ToString</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_utils_sleep_.html#sleep" class="tsd-kind-icon">sleep</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,45 +82,48 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="booleantostring" class="tsd-anchor"></a>
-					<h3>boolean<wbr>ToString</h3>
+					<a name="sleep" class="tsd-anchor"></a>
+					<h3>sleep</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">boolean<wbr>ToString<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, onTrue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, onFalse<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">sleep<span class="tsd-signature-symbol">(</span>ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/3483949/src/formatting/boolean.ts#L7">formatting/boolean.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/3483949/src/utils/sleep.ts#L22">utils/sleep.ts:22</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Converts a boolean value into <code>yes</code> or <code>no</code>.</p>
+									<p>Sleep for a while. Provides the same functionality as
+									with PHP, Bash etc.</p>
 								</div>
+								<p>The function is asynchronous, which means other scripts
+									are able to run while the sleeping script is waiting.
+									As soon as the sleep is over, the script execution will
+								continue.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">task</span> (<span class="hljs-params"></span>) </span>{
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Starting task...`</span>)
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Going to sleep for 2 seconds...`</span>)
+ <span class="hljs-keyword">await</span> v.sleep(<span class="hljs-number">1000</span> * <span class="hljs-number">2</span>)
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`I'm back!`</span>)
+}</code></pre>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>input: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5>ms: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Input boolean or truthy/falsy value.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> onTrue: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;Ja&quot;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>String to display if input is truthy.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> onFalse: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;Nej&quot;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>String to display if input is falsy.</p>
+										<p>Number of milliseconds to sleep (1000 ms = 1 s)</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -141,7 +144,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_file_index_.html">&quot;file/index&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="_formatting_boolean_.html">&quot;formatting/boolean&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -180,7 +183,7 @@
 					<li class=" tsd-kind-module">
 						<a href="_utils_index_.html">&quot;utils/index&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="_utils_sleep_.html">&quot;utils/sleep&quot;</a>
 					</li>
 				</ul>
@@ -188,7 +191,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_formatting_boolean_.html#booleantostring" class="tsd-kind-icon">boolean<wbr>ToString</a>
+						<a href="_utils_sleep_.html#sleep" class="tsd-kind-icon">sleep</a>
 					</li>
 				</ul>
 			</nav>

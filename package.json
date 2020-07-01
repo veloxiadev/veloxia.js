@@ -1,7 +1,7 @@
 {
   "name": "@veloxia/veloxia",
   "description": "Javascript helpers.",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "author": "Viktor Svensson <viktor@veloxia.se> (https://www.veloxia.se)",
   "license": "MIT",
   "main": "lib/index.js",
