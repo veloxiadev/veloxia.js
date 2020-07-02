@@ -9,7 +9,7 @@ import { resolve } from "path";
  * @returns
  */
 export function getExtension(absPath: string) {
-  return absPath.match(/\.(\w+)$/)[1].toLowerCase();
+  return absPath.match(/\.(\w+)$/i)[1].toLowerCase();
 }
 /**
  * File reading (synchronous). Automatically decodes JSON if file is
@@ -61,6 +61,8 @@ export function fw<T>(
       buffer = content.toString();
       break;
   }
+  // Throw exception if we did not manage to convert the
+  // input data to string
   if (typeof buffer !== "string") {
     throw new Error(`Could not convert file content to string.`);
   }

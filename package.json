@@ -1,7 +1,7 @@
 {
   "name": "@veloxia/veloxia",
   "description": "Javascript helpers.",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "Viktor Svensson <viktor@veloxia.se> (https://www.veloxia.se)",
   "license": "MIT",
   "main": "lib/index.js",
@@ -10,7 +10,7 @@
     "clean:lib": "[ ! -d lib ] || rimraf lib",
     "clean:docs": "[ ! -d docs ] || rimraf docs",
     "clean:tests": "[ ! -d coverage ] || rimraf coverage",
-    "build": "npm run lint && npm run build:main && npm run build:docs",
+    "build": "npm run lint && npm run build:main && npm run build:docs && npm run test",
     "build:main": "npm run clean:lib && tsc --build tsconfig.build.json",
     "build:docs": "npm run clean:docs && ./node_modules/.bin/typedoc --readme ./README.md --out docs src",
     "watch": "npm run clean:lib && tsc --build tsconfig.build.json --watch",
