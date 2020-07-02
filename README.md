@@ -12,16 +12,40 @@ Some javascript helper functions.
 npm install @veloxia/veloxia
 ```
 
-## Example usage
+### Import
+
+ES6/Typescript
 
 ```javascript
-// ES6 import
 import * as v from "@veloxia/veloxia";
-// Node require
+```
+
+CommonJS
+
+```javascript
 const v = require("@veloxia/veloxia");
 ```
 
-_v.awaitCondition()_ lets you await anything.
+## Example usage
+
+### File reading and file writing
+
+`v.fw()` and `v.fr()` provides quick access to file read/write. The helpers enforce providing the `__dirname` to avoid opening or writing to the wrong file. If the file extension is `.json`, the content is automatically encoded/decoded using `JSON.stringify()` and `JSON.parse()`.
+
+```javascript
+// Save an object as JSON
+const obj = { name: "Hello world" };
+v.fw(__dirname, "file.json", obj);
+
+// Open the file and parse automatically
+const file = v.fr(__dirname, "file.json");
+console.log(file);
+// => {name: 'Hello world'}
+```
+
+### Utils
+
+`v.awaitCondition()` lets you await anything.
 
 ```javascript
 (async () => {
@@ -39,14 +63,18 @@ _v.awaitCondition()_ lets you await anything.
 })();
 ```
 
-_v.numberFormat()_ adds thousands separators/decimal points to a number.
+### Formatting
+
+`v.numberFormat()` adds thousands separators/decimal points to a number.
 
 ```javascript
 const val = v.numberFormat(8999.9112, 2, ",", " ");
 console.log(val); // 8 999,91
 ```
 
-_v.date()_ applies a format template to a date object.
+### Dates
+
+`v.date()` applies a format template to a date object.
 
 ```javascript
 const now = v.date("Y-m-d");

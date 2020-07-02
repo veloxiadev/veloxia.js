@@ -94,7 +94,7 @@
 					<div class="tsd-signature tsd-kind-icon">LITERAL_<wbr>TIME_<wbr>PARSER_<wbr>RULES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">{ </span>match<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol">; </span>provide<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>match<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>provide<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>match<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol">; </span>provide<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [{match: /^now$/i,provide: () &#x3D;&gt; Date.now(),},{match: /^today$/i,provide: () &#x3D;&gt; Date.now(),},{match: /^tomorrow$/i,provide: () &#x3D;&gt; Date.now() + 1000 * 3600 * 24,},{match: /^yesterday$/i,provide: () &#x3D;&gt; Date.now() - 1000 * 3600 * 24,},{match: /^last week$/i,provide: () &#x3D;&gt; Date.now() - 1000 * 3600 * 24 * 7,},{match: /^next week$/i,provide: () &#x3D;&gt; Date.now() + 1000 * 3600 * 24 * 7,},{match: /^last month$/i,provide: () &#x3D;&gt; Date.now() - 1000 * 3600 * 24 * 30,},{match: /^next month$/i,provide: () &#x3D;&gt; Date.now() + 1000 * 3600 * 24 * 30,},{match: /^last year$/i,provide: () &#x3D;&gt; Date.now() - 1000 * 3600 * 24 * 365,},{match: /^next year$/i,provide: () &#x3D;&gt; Date.now() + 1000 * 3600 * 24 * 365,},{match: [/^(?&lt;num&gt;\d+)\s*?(?&lt;unit&gt;year|month|week|day|hour|minute|second)s?\s*?ago$/i,/^-\s*?(?&lt;num&gt;\d+)\s*?(?&lt;unit&gt;year|month|week|day|hour|minute|second)s?$/i,],provide: (match: { num: any; unit: any }) &#x3D;&gt; {const milliSeconds &#x3D; toMs(match.unit.toLowerCase());const factor &#x3D; parseInt(match.num);const date &#x3D; new Date(Date.now() - milliSeconds * factor);return date;},},{match: /^(?:\+|in)\s*?(?&lt;num&gt;\d+)\s*?(?&lt;unit&gt;year|month|week|day|hour|minute|second)s?\s*$/i,provide: (match: { num: any; unit: any }) &#x3D;&gt; {const milliSeconds &#x3D; toMs(match.unit.toLowerCase());const factor &#x3D; parseInt(match.num);const date &#x3D; new Date(Date.now() + milliSeconds * factor);return date;},},]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/3483949/src/date/date.ts#L34">date/date.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/47d39a4/src/date/date.ts#L34">date/date.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -111,7 +111,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/3483949/src/date/date.ts#L103">date/date.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/47d39a4/src/date/date.ts#L103">date/date.ts:103</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -148,7 +148,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/3483949/src/date/date.ts#L5">date/date.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/veloxiadev/veloxia.js/blob/47d39a4/src/date/date.ts#L5">date/date.ts:5</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
